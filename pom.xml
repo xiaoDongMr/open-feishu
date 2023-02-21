@@ -186,6 +186,13 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!-- 飞书多维表格-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>open-feishu-bitable</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -196,6 +203,7 @@
         <module>open-feishu-quartz</module>
         <module>open-feishu-generator</module>
         <module>open-feishu-common</module>
+        <module>open-feishu-bitable</module>
     </modules>
     <packaging>pom</packaging>
 

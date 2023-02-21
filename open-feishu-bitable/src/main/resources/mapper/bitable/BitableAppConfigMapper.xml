@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.bitable.mapper.BitableAppConfigMapper">
+    
+    <resultMap type="BitableAppConfig" id="BitableAppConfigResult">
+        <result property="id"    column="id"    />
+        <result property="appId"    column="app_id"    />
+        <result property="appSecret"    column="app_secret"    />
+        <result property="appType"    column="app_type"    />
+        <result property="appToken"    column="app_token"    />
+        <result property="tableId"    column="table_id"    />
+        <result property="viewId"    column="view_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectBitableAppConfigVo">
+        select id, app_id, app_secret, app_type, app_token, table_id, view_id, create_by, create_time, update_by, update_time from bitable_app_config
+    </sql>
+
+    <select id="selectBitableAppConfigList" parameterType="BitableAppConfig" resultMap="BitableAppConfigResult">
+        <include refid="selectBitableAppConfigVo"/>
+        <where>  
+            <if test="appId != null  and appId != ''"> and app_id = #{appId}</if>
+            <if test="appSecret != null  and appSecret != ''"> and app_secret = #{appSecret}</if>
+            <if test="appType != null "> and app_type = #{appType}</if>
+            <if test="appToken != null  and appToken != ''"> and app_token = #{appToken}</if>
+            <if test="tableId != null  and tableId != ''"> and table_id = #{tableId}</if>
+            <if test="viewId != null  and viewId != ''"> and view_id = #{viewId}</if>
+        </where>
+    </select>
+    
+    <select id="selectBitableAppConfigById" parameterType="String" resultMap="BitableAppConfigResult">
+        <include refid="selectBitableAppConfigVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBitableAppConfig" parameterType="BitableAppConfig" useGeneratedKeys="true" keyProperty="id">
+        insert into bitable_app_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="appId != null and appId != ''">app_id,</if>
+            <if test="appSecret != null and appSecret != ''">app_secret,</if>
+            <if test="appType != null">app_type,</if>
+            <if test="appToken != null and appToken != ''">app_token,</if>
+            <if test="tableId != null and tableId != ''">table_id,</if>
+            <if test="viewId != null and viewId != ''">view_id,</if>
+            <if test="createBy != null and createBy != ''">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null and updateBy != ''">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="appId != null and appId != ''">#{appId},</if>
+            <if test="appSecret != null and appSecret != ''">#{appSecret},</if>
+            <if test="appType != null">#{appType},</if>
+            <if test="appToken != null and appToken != ''">#{appToken},</if>
+            <if test="tableId != null and tableId != ''">#{tableId},</if>
+            <if test="viewId != null and viewId != ''">#{viewId},</if>
+            <if test="createBy != null and createBy != ''">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBitableAppConfig" parameterType="BitableAppConfig">
+        update bitable_app_config
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="appId != null and appId != ''">app_id = #{appId},</if>
+            <if test="appSecret != null and appSecret != ''">app_secret = #{appSecret},</if>
+            <if test="appType != null">app_type = #{appType},</if>
+            <if test="appToken != null and appToken != ''">app_token = #{appToken},</if>
+            <if test="tableId != null and tableId != ''">table_id = #{tableId},</if>
+            <if test="viewId != null and viewId != ''">view_id = #{viewId},</if>
+            <if test="createBy != null and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBitableAppConfigById" parameterType="String">
+        delete from bitable_app_config where id = #{id}
+    </delete>
+
+    <delete id="deleteBitableAppConfigByIds" parameterType="String">
+        delete from bitable_app_config where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

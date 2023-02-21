@@ -6,9 +6,9 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:mysql://dohko.mysql.001.master.hualala.com:3306/db_distribution_feishu?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+                url: jdbc:mysql://localhost:3306/open_feishu?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
                 username: root
-                password: hualaladev
+                password: root
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭

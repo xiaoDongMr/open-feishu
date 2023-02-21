@@ -61,6 +61,12 @@
             <artifactId>open-feishu-generator</artifactId>
         </dependency>
 
+        <!-- 飞书多维表格-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>open-feishu-bitable</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
