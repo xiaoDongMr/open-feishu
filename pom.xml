@@ -32,6 +32,7 @@
         <poi.version>4.1.2</poi.version>
         <velocity.version>2.3</velocity.version>
         <jwt.version>0.9.1</jwt.version>
+        <oapi.sdk.version>2.0.13</oapi.sdk.version>
     </properties>
 	
     <!-- 依赖声明 -->
@@ -151,6 +152,13 @@
                 <version>${kaptcha.version}</version>
             </dependency>
 
+            <!-- 飞书sdk -->
+            <dependency>
+                <groupId>com.larksuite.oapi</groupId>
+                <artifactId>oapi-sdk</artifactId>
+                <version>${oapi.sdk.version}</version>
+            </dependency>
+
             <!-- 定时任务-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
@@ -193,6 +201,13 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!-- 餐饮平台模块-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>open-feishu-catering-platform</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -204,6 +219,7 @@
         <module>open-feishu-generator</module>
         <module>open-feishu-common</module>
         <module>open-feishu-bitable</module>
+        <module>open-feishu-catering-platform</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -235,6 +251,10 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
+        </repository>
+        <repository>
+            <id>Central Repository</id>
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
 

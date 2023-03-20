@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.catering.mapper.CateringPlatformElmShopDataMapper">
+    
+    <resultMap type="CateringPlatformElmShopData" id="CateringPlatformElmShopDataResult">
+        <result property="id"    column="id"    />
+        <result property="date"    column="date"    />
+        <result property="shopName"    column="shop_name"    />
+        <result property="shopId"    column="shop_id"    />
+        <result property="operatingHours"    column="operating_hours"    />
+        <result property="peakHours"    column="peak_hours"    />
+        <result property="province"    column="province"    />
+        <result property="cityName"    column="city_name"    />
+        <result property="validOrder"    column="valid_order"    />
+        <result property="invalidOrder"    column="invalid_order"    />
+        <result property="income"    column="income"    />
+        <result property="turnover"    column="turnover"    />
+        <result property="pay"    column="pay"    />
+        <result property="customersActuallyAmountTotal"    column="customers_actually_amount_total"    />
+        <result property="actualAveragePrice"    column="actual_average_price"    />
+        <result property="averageIncomePrice"    column="average_income_price"    />
+        <result property="salesGoods"    column="sales_goods"    />
+        <result property="packagingFee"    column="packaging_fee"    />
+        <result property="selfDeliveryFee"    column="self_delivery_fee"    />
+        <result property="otherTurnover"    column="other_turnover"    />
+        <result property="drawServant"    column="draw_servant"    />
+        <result property="activitySubsidy"    column="activity_subsidy"    />
+        <result property="voucherSubsidy"    column="voucher_subsidy"    />
+        <result property="distributionFeeSubsidy"    column="distribution_fee_subsidy"    />
+        <result property="smartReductionSubsidy"    column="smart_reduction_subsidy"    />
+        <result property="smartReductionServiceCharge"    column="smart_reduction_service_charge"    />
+        <result property="technicalServiceFee"    column="technical_service_fee"    />
+        <result property="otherExpenses"    column="other_expenses"    />
+        <result property="merchantInvalidOrders"    column="merchant_invalid_orders"    />
+        <result property="exposedPeopleNum"    column="exposed_people_num"    />
+        <result property="exposureTimes"    column="exposure_times"    />
+        <result property="enterShopTimes"    column="enter_shop_times"    />
+        <result property="enterShopPeopleNum"    column="enter_shop_people_num"    />
+        <result property="shopConversionRate"    column="shop_conversion_rate"    />
+        <result property="orderConversionRate"    column="order_conversion_rate"    />
+        <result property="newOrdersConversionRate"    column="new_orders_conversion_rate"    />
+        <result property="regularCustomersConversionRate"    column="regular_customers_conversion_rate"    />
+        <result property="activitiesNum"    column="activities_num"    />
+        <result property="activeOrdersNum"    column="active_orders_num"    />
+        <result property="activeOrdersProportion"    column="active_orders_proportion"    />
+        <result property="activeOrdersFullReduction"    column="active_orders_full_reduction"    />
+        <result property="beyondMeetingOrders"    column="beyond_meeting_orders"    />
+        <result property="deliveryActivityOrders"    column="delivery_activity_orders"    />
+        <result property="inputOutputRatio"    column="input_output_ratio"    />
+        <result property="activitiesSubsidyTotal"    column="activities_subsidy_total"    />
+        <result property="elmSubsidy"    column="elm_subsidy"    />
+        <result property="agentSubsidy"    column="agent_subsidy"    />
+        <result property="merchantActivityCosts"    column="merchant_activity_costs"    />
+        <result property="excludingMerchantActivityCosts"    column="excluding_merchant_activity_costs"    />
+        <result property="marketingEfforts"    column="marketing_efforts"    />
+        <result property="excludingMarketingEfforts"    column="excluding_marketing_efforts"    />
+        <result property="ordersPeopleNum"    column="orders_people_num"    />
+        <result property="recent7daysRepurchasesNum"    column="recent_7days_repurchases_num"    />
+        <result property="recent7daysRepurchasesRate"    column="recent_7days_repurchases_rate"    />
+        <result property="recent30daysRepurchaseNum"    column="recent_30days_repurchase_num"    />
+        <result property="recent30daysRepurchaseRate"    column="recent_30days_repurchase_rate"    />
+        <result property="newCustomersNum"    column="new_customers_num"    />
+        <result property="regularCustomersNum"    column="regular_customers_num"    />
+        <result property="onShelfGoodsNum"    column="on_shelf_goods_num"    />
+        <result property="tradedGoodsNum"    column="traded_goods_num"    />
+        <result property="insufficientInventoryGoodsNum"    column="insufficient_inventory_goods_num"    />
+        <result property="newProductsMarketNum"    column="new_products_market_num"    />
+        <result property="activeProductsNum"    column="active_products_num"    />
+        <result property="negativeEvaluationOrderNum"    column="negative_evaluation_order_num"    />
+        <result property="complaintOrdersNum"    column="complaint_orders_num"    />
+        <result property="complaintOrderId"    column="complaint_order_id"    />
+        <result property="overtimeOrdersNum"    column="overtime_orders_num"    />
+        <result property="mealTimeoutOrderId"    column="meal_timeout_order_id"    />
+        <result property="averageMealTime"    column="average_meal_time"    />
+        <result property="remindersNum"    column="reminders_num"    />
+        <result property="rejectedOrdersNum"    column="rejected_orders_num"    />
+        <result property="scannedFoodTreasureNum"    column="scanned_food_treasure_num"    />
+        <result property="cancelNum"    column="cancel_num"    />
+        <result property="responsibilityTimeoutNum"    column="responsibility_timeout_num"    />
+        <result property="chargebacksNum"    column="chargebacks_num"    />
+        <result property="reminderNum"    column="reminder_num"    />
+        <result property="cancelRate"    column="cancel_rate"    />
+        <result property="overtimeRate"    column="overtime_rate"    />
+        <result property="chargebackRate"    column="chargeback_rate"    />
+        <result property="reminderRate"    column="reminder_rate"    />
+        <result property="shopScore"    column="shop_score"    />
+        <result property="satisfactionScore"    column="satisfaction_score"    />
+        <result property="tasteScore"    column="taste_score"    />
+        <result property="packagingScore"    column="packaging_score"    />
+        <result property="recent30daysPositiveRate"    column="recent_30days_positive_rate"    />
+        <result property="recent30daysPositiveComments"    column="recent_30days_positive_comments"    />
+        <result property="recent30daysEvaluationRate"    column="recent_30days_evaluation_rate"    />
+        <result property="recent30daysMidNum"    column="recent_30days_mid_num"    />
+        <result property="recent30daysBadEvaluationRate"    column="recent_30days_bad_evaluation_rate"    />
+        <result property="recent30daysNegativeCommentsNum"    column="recent_30days_negative_comments_num"    />
+        <result property="recent30daysQualityEvaluationRate"    column="recent_30days_quality_evaluation_rate"    />
+        <result property="recent30daysHighQualityEvaluationsNum"    column="recent_30days_high_quality_evaluations_num"    />
+        <result property="recent30daysOrderEvaluationRate"    column="recent_30days_order_evaluation_rate"    />
+        <result property="recent30daysOrderEvaluationNum"    column="recent_30days_order_evaluation_num"    />
+        <result property="recent30daysManualResponseRate"    column="recent_30days_manual_response_rate"    />
+    </resultMap>
+
+    <sql id="selectCateringPlatformElmShopDataVo">
+        select id, date, shop_name, shop_id, operating_hours, peak_hours, province, city_name, valid_order, invalid_order, income, turnover, pay, customers_actually_amount_total, actual_average_price, average_income_price, sales_goods, packaging_fee, self_delivery_fee, other_turnover, draw_servant, activity_subsidy, voucher_subsidy, distribution_fee_subsidy, smart_reduction_subsidy, smart_reduction_service_charge, technical_service_fee, other_expenses, merchant_invalid_orders, exposed_people_num, exposure_times, enter_shop_times, enter_shop_people_num, shop_conversion_rate, order_conversion_rate, new_orders_conversion_rate, regular_customers_conversion_rate, activities_num, active_orders_num, active_orders_proportion, active_orders_full_reduction, beyond_meeting_orders, delivery_activity_orders, input_output_ratio, activities_subsidy_total, elm_subsidy, agent_subsidy, merchant_activity_costs, excluding_merchant_activity_costs, marketing_efforts, excluding_marketing_efforts, orders_people_num, recent_7days_repurchases_num, recent_7days_repurchases_rate, recent_30days_repurchase_num, recent_30days_repurchase_rate, new_customers_num, regular_customers_num, on_shelf_goods_num, traded_goods_num, insufficient_inventory_goods_num, new_products_market_num, active_products_num, negative_evaluation_order_num, complaint_orders_num, complaint_order_id, overtime_orders_num, meal_timeout_order_id, average_meal_time, reminders_num, rejected_orders_num, scanned_food_treasure_num, cancel_num, responsibility_timeout_num, chargebacks_num, reminder_num, cancel_rate, overtime_rate, chargeback_rate, reminder_rate, shop_score, satisfaction_score, taste_score, packaging_score, recent_30days_positive_rate, recent_30days_positive_comments, recent_30days_evaluation_rate, recent_30days_mid_num, recent_30days_bad_evaluation_rate, recent_30days_negative_comments_num, recent_30days_quality_evaluation_rate, recent_30days_high_quality_evaluations_num, recent_30days_order_evaluation_rate, recent_30days_order_evaluation_num, recent_30days_manual_response_rate from catering_platform_elm_shop_data
+    </sql>
+
+    <select id="selectCateringPlatformElmShopDataList" parameterType="CateringPlatformElmShopData" resultMap="CateringPlatformElmShopDataResult">
+        <include refid="selectCateringPlatformElmShopDataVo"/>
+        <where>  
+            <if test="date != null "> and date = #{date}</if>
+            <if test="shopName != null  and shopName != ''"> and shop_name like concat('%', #{shopName}, '%')</if>
+            <if test="shopId != null "> and shop_id = #{shopId}</if>
+            <if test="operatingHours != null  and operatingHours != ''"> and operating_hours = #{operatingHours}</if>
+            <if test="peakHours != null  and peakHours != ''"> and peak_hours = #{peakHours}</if>
+            <if test="province != null  and province != ''"> and province = #{province}</if>
+            <if test="cityName != null  and cityName != ''"> and city_name like concat('%', #{cityName}, '%')</if>
+            <if test="validOrder != null "> and valid_order = #{validOrder}</if>
+            <if test="invalidOrder != null "> and invalid_order = #{invalidOrder}</if>
+            <if test="income != null "> and income = #{income}</if>
+            <if test="turnover != null "> and turnover = #{turnover}</if>
+            <if test="pay != null "> and pay = #{pay}</if>
+            <if test="customersActuallyAmountTotal != null "> and customers_actually_amount_total = #{customersActuallyAmountTotal}</if>
+            <if test="actualAveragePrice != null "> and actual_average_price = #{actualAveragePrice}</if>
+            <if test="averageIncomePrice != null "> and average_income_price = #{averageIncomePrice}</if>
+            <if test="salesGoods != null "> and sales_goods = #{salesGoods}</if>
+            <if test="packagingFee != null "> and packaging_fee = #{packagingFee}</if>
+            <if test="selfDeliveryFee != null "> and self_delivery_fee = #{selfDeliveryFee}</if>
+            <if test="otherTurnover != null "> and other_turnover = #{otherTurnover}</if>
+            <if test="drawServant != null "> and draw_servant = #{drawServant}</if>
+            <if test="activitySubsidy != null "> and activity_subsidy = #{activitySubsidy}</if>
+            <if test="voucherSubsidy != null "> and voucher_subsidy = #{voucherSubsidy}</if>
+            <if test="distributionFeeSubsidy != null "> and distribution_fee_subsidy = #{distributionFeeSubsidy}</if>
+            <if test="smartReductionSubsidy != null "> and smart_reduction_subsidy = #{smartReductionSubsidy}</if>
+            <if test="smartReductionServiceCharge != null "> and smart_reduction_service_charge = #{smartReductionServiceCharge}</if>
+            <if test="technicalServiceFee != null "> and technical_service_fee = #{technicalServiceFee}</if>
+            <if test="otherExpenses != null "> and other_expenses = #{otherExpenses}</if>
+            <if test="merchantInvalidOrders != null "> and merchant_invalid_orders = #{merchantInvalidOrders}</if>
+            <if test="exposedPeopleNum != null "> and exposed_people_num = #{exposedPeopleNum}</if>
+            <if test="exposureTimes != null "> and exposure_times = #{exposureTimes}</if>
+            <if test="enterShopTimes != null "> and enter_shop_times = #{enterShopTimes}</if>
+            <if test="enterShopPeopleNum != null "> and enter_shop_people_num = #{enterShopPeopleNum}</if>
+            <if test="shopConversionRate != null "> and shop_conversion_rate = #{shopConversionRate}</if>
+            <if test="orderConversionRate != null "> and order_conversion_rate = #{orderConversionRate}</if>
+            <if test="newOrdersConversionRate != null "> and new_orders_conversion_rate = #{newOrdersConversionRate}</if>
+            <if test="regularCustomersConversionRate != null "> and regular_customers_conversion_rate = #{regularCustomersConversionRate}</if>
+            <if test="activitiesNum != null "> and activities_num = #{activitiesNum}</if>
+            <if test="activeOrdersNum != null "> and active_orders_num = #{activeOrdersNum}</if>
+            <if test="activeOrdersProportion != null  and activeOrdersProportion != ''"> and active_orders_proportion = #{activeOrdersProportion}</if>
+            <if test="activeOrdersFullReduction != null "> and active_orders_full_reduction = #{activeOrdersFullReduction}</if>
+            <if test="beyondMeetingOrders != null "> and beyond_meeting_orders = #{beyondMeetingOrders}</if>
+            <if test="deliveryActivityOrders != null "> and delivery_activity_orders = #{deliveryActivityOrders}</if>
+            <if test="inputOutputRatio != null "> and input_output_ratio = #{inputOutputRatio}</if>
+            <if test="activitiesSubsidyTotal != null "> and activities_subsidy_total = #{activitiesSubsidyTotal}</if>
+            <if test="elmSubsidy != null "> and elm_subsidy = #{elmSubsidy}</if>
+            <if test="agentSubsidy != null "> and agent_subsidy = #{agentSubsidy}</if>
+            <if test="merchantActivityCosts != null "> and merchant_activity_costs = #{merchantActivityCosts}</if>
+            <if test="excludingMerchantActivityCosts != null "> and excluding_merchant_activity_costs = #{excludingMerchantActivityCosts}</if>
+            <if test="marketingEfforts != null "> and marketing_efforts = #{marketingEfforts}</if>
+            <if test="excludingMarketingEfforts != null "> and excluding_marketing_efforts = #{excludingMarketingEfforts}</if>
+            <if test="ordersPeopleNum != null "> and orders_people_num = #{ordersPeopleNum}</if>
+            <if test="recent7daysRepurchasesNum != null "> and recent_7days_repurchases_num = #{recent7daysRepurchasesNum}</if>
+            <if test="recent7daysRepurchasesRate != null "> and recent_7days_repurchases_rate = #{recent7daysRepurchasesRate}</if>
+            <if test="recent30daysRepurchaseNum != null "> and recent_30days_repurchase_num = #{recent30daysRepurchaseNum}</if>
+            <if test="recent30daysRepurchaseRate != null "> and recent_30days_repurchase_rate = #{recent30daysRepurchaseRate}</if>
+            <if test="newCustomersNum != null "> and new_customers_num = #{newCustomersNum}</if>
+            <if test="regularCustomersNum != null "> and regular_customers_num = #{regularCustomersNum}</if>
+            <if test="onShelfGoodsNum != null "> and on_shelf_goods_num = #{onShelfGoodsNum}</if>
+            <if test="tradedGoodsNum != null "> and traded_goods_num = #{tradedGoodsNum}</if>
+            <if test="insufficientInventoryGoodsNum != null "> and insufficient_inventory_goods_num = #{insufficientInventoryGoodsNum}</if>
+            <if test="newProductsMarketNum != null "> and new_products_market_num = #{newProductsMarketNum}</if>
+            <if test="activeProductsNum != null "> and active_products_num = #{activeProductsNum}</if>
+            <if test="negativeEvaluationOrderNum != null "> and negative_evaluation_order_num = #{negativeEvaluationOrderNum}</if>
+            <if test="complaintOrdersNum != null "> and complaint_orders_num = #{complaintOrdersNum}</if>
+            <if test="complaintOrderId != null  and complaintOrderId != ''"> and complaint_order_id = #{complaintOrderId}</if>
+            <if test="overtimeOrdersNum != null "> and overtime_orders_num = #{overtimeOrdersNum}</if>
+            <if test="mealTimeoutOrderId != null  and mealTimeoutOrderId != ''"> and meal_timeout_order_id = #{mealTimeoutOrderId}</if>
+            <if test="averageMealTime != null "> and average_meal_time = #{averageMealTime}</if>
+            <if test="remindersNum != null "> and reminders_num = #{remindersNum}</if>
+            <if test="rejectedOrdersNum != null "> and rejected_orders_num = #{rejectedOrdersNum}</if>
+            <if test="scannedFoodTreasureNum != null "> and scanned_food_treasure_num = #{scannedFoodTreasureNum}</if>
+            <if test="cancelNum != null "> and cancel_num = #{cancelNum}</if>
+            <if test="responsibilityTimeoutNum != null "> and responsibility_timeout_num = #{responsibilityTimeoutNum}</if>
+            <if test="chargebacksNum != null "> and chargebacks_num = #{chargebacksNum}</if>
+            <if test="reminderNum != null "> and reminder_num = #{reminderNum}</if>
+            <if test="cancelRate != null "> and cancel_rate = #{cancelRate}</if>
+            <if test="overtimeRate != null "> and overtime_rate = #{overtimeRate}</if>
+            <if test="chargebackRate != null "> and chargeback_rate = #{chargebackRate}</if>
+            <if test="reminderRate != null "> and reminder_rate = #{reminderRate}</if>
+            <if test="shopScore != null "> and shop_score = #{shopScore}</if>
+            <if test="satisfactionScore != null "> and satisfaction_score = #{satisfactionScore}</if>
+            <if test="tasteScore != null "> and taste_score = #{tasteScore}</if>
+            <if test="packagingScore != null "> and packaging_score = #{packagingScore}</if>
+            <if test="recent30daysPositiveRate != null "> and recent_30days_positive_rate = #{recent30daysPositiveRate}</if>
+            <if test="recent30daysPositiveComments != null "> and recent_30days_positive_comments = #{recent30daysPositiveComments}</if>
+            <if test="recent30daysEvaluationRate != null "> and recent_30days_evaluation_rate = #{recent30daysEvaluationRate}</if>
+            <if test="recent30daysMidNum != null "> and recent_30days_mid_num = #{recent30daysMidNum}</if>
+            <if test="recent30daysBadEvaluationRate != null "> and recent_30days_bad_evaluation_rate = #{recent30daysBadEvaluationRate}</if>
+            <if test="recent30daysNegativeCommentsNum != null "> and recent_30days_negative_comments_num = #{recent30daysNegativeCommentsNum}</if>
+            <if test="recent30daysQualityEvaluationRate != null "> and recent_30days_quality_evaluation_rate = #{recent30daysQualityEvaluationRate}</if>
+            <if test="recent30daysHighQualityEvaluationsNum != null "> and recent_30days_high_quality_evaluations_num = #{recent30daysHighQualityEvaluationsNum}</if>
+            <if test="recent30daysOrderEvaluationRate != null "> and recent_30days_order_evaluation_rate = #{recent30daysOrderEvaluationRate}</if>
+            <if test="recent30daysOrderEvaluationNum != null "> and recent_30days_order_evaluation_num = #{recent30daysOrderEvaluationNum}</if>
+            <if test="recent30daysManualResponseRate != null "> and recent_30days_manual_response_rate = #{recent30daysManualResponseRate}</if>
+        </where>
+    </select>
+    
+    <select id="selectCateringPlatformElmShopDataById" parameterType="Long" resultMap="CateringPlatformElmShopDataResult">
+        <include refid="selectCateringPlatformElmShopDataVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="selectElmShopDataByShopIDAndDate" parameterType="CateringPlatformElmShopData" resultMap="CateringPlatformElmShopDataResult">
+        <include refid="selectCateringPlatformElmShopDataVo"/>
+        <where>
+          date = #{date} and shop_id = #{shopId}
+        </where>
+    </select>
+
+    <insert id="insertCateringPlatformElmShopData" parameterType="CateringPlatformElmShopData" useGeneratedKeys="true" keyProperty="id">
+        insert into catering_platform_elm_shop_data
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="date != null">date,</if>
+            <if test="shopName != null and shopName != ''">shop_name,</if>
+            <if test="shopId != null">shop_id,</if>
+            <if test="operatingHours != null and operatingHours != ''">operating_hours,</if>
+            <if test="peakHours != null and peakHours != ''">peak_hours,</if>
+            <if test="province != null and province != ''">province,</if>
+            <if test="cityName != null and cityName != ''">city_name,</if>
+            <if test="validOrder != null">valid_order,</if>
+            <if test="invalidOrder != null">invalid_order,</if>
+            <if test="income != null">income,</if>
+            <if test="turnover != null">turnover,</if>
+            <if test="pay != null">pay,</if>
+            <if test="customersActuallyAmountTotal != null">customers_actually_amount_total,</if>
+            <if test="actualAveragePrice != null">actual_average_price,</if>
+            <if test="averageIncomePrice != null">average_income_price,</if>
+            <if test="salesGoods != null">sales_goods,</if>
+            <if test="packagingFee != null">packaging_fee,</if>
+            <if test="selfDeliveryFee != null">self_delivery_fee,</if>
+            <if test="otherTurnover != null">other_turnover,</if>
+            <if test="drawServant != null">draw_servant,</if>
+            <if test="activitySubsidy != null">activity_subsidy,</if>
+            <if test="voucherSubsidy != null">voucher_subsidy,</if>
+            <if test="distributionFeeSubsidy != null">distribution_fee_subsidy,</if>
+            <if test="smartReductionSubsidy != null">smart_reduction_subsidy,</if>
+            <if test="smartReductionServiceCharge != null">smart_reduction_service_charge,</if>
+            <if test="technicalServiceFee != null">technical_service_fee,</if>
+            <if test="otherExpenses != null">other_expenses,</if>
+            <if test="merchantInvalidOrders != null">merchant_invalid_orders,</if>
+            <if test="exposedPeopleNum != null">exposed_people_num,</if>
+            <if test="exposureTimes != null">exposure_times,</if>
+            <if test="enterShopTimes != null">enter_shop_times,</if>
+            <if test="enterShopPeopleNum != null">enter_shop_people_num,</if>
+            <if test="shopConversionRate != null">shop_conversion_rate,</if>
+            <if test="orderConversionRate != null">order_conversion_rate,</if>
+            <if test="newOrdersConversionRate != null">new_orders_conversion_rate,</if>
+            <if test="regularCustomersConversionRate != null">regular_customers_conversion_rate,</if>
+            <if test="activitiesNum != null">activities_num,</if>
+            <if test="activeOrdersNum != null">active_orders_num,</if>
+            <if test="activeOrdersProportion != null and activeOrdersProportion != ''">active_orders_proportion,</if>
+            <if test="activeOrdersFullReduction != null">active_orders_full_reduction,</if>
+            <if test="beyondMeetingOrders != null">beyond_meeting_orders,</if>
+            <if test="deliveryActivityOrders != null">delivery_activity_orders,</if>
+            <if test="inputOutputRatio != null">input_output_ratio,</if>
+            <if test="activitiesSubsidyTotal != null">activities_subsidy_total,</if>
+            <if test="elmSubsidy != null">elm_subsidy,</if>
+            <if test="agentSubsidy != null">agent_subsidy,</if>
+            <if test="merchantActivityCosts != null">merchant_activity_costs,</if>
+            <if test="excludingMerchantActivityCosts != null">excluding_merchant_activity_costs,</if>
+            <if test="marketingEfforts != null">marketing_efforts,</if>
+            <if test="excludingMarketingEfforts != null">excluding_marketing_efforts,</if>
+            <if test="ordersPeopleNum != null">orders_people_num,</if>
+            <if test="recent7daysRepurchasesNum != null">recent_7days_repurchases_num,</if>
+            <if test="recent7daysRepurchasesRate != null">recent_7days_repurchases_rate,</if>
+            <if test="recent30daysRepurchaseNum != null">recent_30days_repurchase_num,</if>
+            <if test="recent30daysRepurchaseRate != null">recent_30days_repurchase_rate,</if>
+            <if test="newCustomersNum != null">new_customers_num,</if>
+            <if test="regularCustomersNum != null">regular_customers_num,</if>
+            <if test="onShelfGoodsNum != null">on_shelf_goods_num,</if>
+            <if test="tradedGoodsNum != null">traded_goods_num,</if>
+            <if test="insufficientInventoryGoodsNum != null">insufficient_inventory_goods_num,</if>
+            <if test="newProductsMarketNum != null">new_products_market_num,</if>
+            <if test="activeProductsNum != null">active_products_num,</if>
+            <if test="negativeEvaluationOrderNum != null">negative_evaluation_order_num,</if>
+            <if test="complaintOrdersNum != null">complaint_orders_num,</if>
+            <if test="complaintOrderId != null and complaintOrderId != ''">complaint_order_id,</if>
+            <if test="overtimeOrdersNum != null">overtime_orders_num,</if>
+            <if test="mealTimeoutOrderId != null and mealTimeoutOrderId != ''">meal_timeout_order_id,</if>
+            <if test="averageMealTime != null">average_meal_time,</if>
+            <if test="remindersNum != null">reminders_num,</if>
+            <if test="rejectedOrdersNum != null">rejected_orders_num,</if>
+            <if test="scannedFoodTreasureNum != null">scanned_food_treasure_num,</if>
+            <if test="cancelNum != null">cancel_num,</if>
+            <if test="responsibilityTimeoutNum != null">responsibility_timeout_num,</if>
+            <if test="chargebacksNum != null">chargebacks_num,</if>
+            <if test="reminderNum != null">reminder_num,</if>
+            <if test="cancelRate != null">cancel_rate,</if>
+            <if test="overtimeRate != null">overtime_rate,</if>
+            <if test="chargebackRate != null">chargeback_rate,</if>
+            <if test="reminderRate != null">reminder_rate,</if>
+            <if test="shopScore != null">shop_score,</if>
+            <if test="satisfactionScore != null">satisfaction_score,</if>
+            <if test="tasteScore != null">taste_score,</if>
+            <if test="packagingScore != null">packaging_score,</if>
+            <if test="recent30daysPositiveRate != null">recent_30days_positive_rate,</if>
+            <if test="recent30daysPositiveComments != null">recent_30days_positive_comments,</if>
+            <if test="recent30daysEvaluationRate != null">recent_30days_evaluation_rate,</if>
+            <if test="recent30daysMidNum != null">recent_30days_mid_num,</if>
+            <if test="recent30daysBadEvaluationRate != null">recent_30days_bad_evaluation_rate,</if>
+            <if test="recent30daysNegativeCommentsNum != null">recent_30days_negative_comments_num,</if>
+            <if test="recent30daysQualityEvaluationRate != null">recent_30days_quality_evaluation_rate,</if>
+            <if test="recent30daysHighQualityEvaluationsNum != null">recent_30days_high_quality_evaluations_num,</if>
+            <if test="recent30daysOrderEvaluationRate != null">recent_30days_order_evaluation_rate,</if>
+            <if test="recent30daysOrderEvaluationNum != null">recent_30days_order_evaluation_num,</if>
+            <if test="recent30daysManualResponseRate != null">recent_30days_manual_response_rate,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="date != null">#{date},</if>
+            <if test="shopName != null and shopName != ''">#{shopName},</if>
+            <if test="shopId != null">#{shopId},</if>
+            <if test="operatingHours != null and operatingHours != ''">#{operatingHours},</if>
+            <if test="peakHours != null and peakHours != ''">#{peakHours},</if>
+            <if test="province != null and province != ''">#{province},</if>
+            <if test="cityName != null and cityName != ''">#{cityName},</if>
+            <if test="validOrder != null">#{validOrder},</if>
+            <if test="invalidOrder != null">#{invalidOrder},</if>
+            <if test="income != null">#{income},</if>
+            <if test="turnover != null">#{turnover},</if>
+            <if test="pay != null">#{pay},</if>
+            <if test="customersActuallyAmountTotal != null">#{customersActuallyAmountTotal},</if>
+            <if test="actualAveragePrice != null">#{actualAveragePrice},</if>
+            <if test="averageIncomePrice != null">#{averageIncomePrice},</if>
+            <if test="salesGoods != null">#{salesGoods},</if>
+            <if test="packagingFee != null">#{packagingFee},</if>
+            <if test="selfDeliveryFee != null">#{selfDeliveryFee},</if>
+            <if test="otherTurnover != null">#{otherTurnover},</if>
+            <if test="drawServant != null">#{drawServant},</if>
+            <if test="activitySubsidy != null">#{activitySubsidy},</if>
+            <if test="voucherSubsidy != null">#{voucherSubsidy},</if>
+            <if test="distributionFeeSubsidy != null">#{distributionFeeSubsidy},</if>
+            <if test="smartReductionSubsidy != null">#{smartReductionSubsidy},</if>
+            <if test="smartReductionServiceCharge != null">#{smartReductionServiceCharge},</if>
+            <if test="technicalServiceFee != null">#{technicalServiceFee},</if>
+            <if test="otherExpenses != null">#{otherExpenses},</if>
+            <if test="merchantInvalidOrders != null">#{merchantInvalidOrders},</if>
+            <if test="exposedPeopleNum != null">#{exposedPeopleNum},</if>
+            <if test="exposureTimes != null">#{exposureTimes},</if>
+            <if test="enterShopTimes != null">#{enterShopTimes},</if>
+            <if test="enterShopPeopleNum != null">#{enterShopPeopleNum},</if>
+            <if test="shopConversionRate != null">#{shopConversionRate},</if>
+            <if test="orderConversionRate != null">#{orderConversionRate},</if>
+            <if test="newOrdersConversionRate != null">#{newOrdersConversionRate},</if>
+            <if test="regularCustomersConversionRate != null">#{regularCustomersConversionRate},</if>
+            <if test="activitiesNum != null">#{activitiesNum},</if>
+            <if test="activeOrdersNum != null">#{activeOrdersNum},</if>
+            <if test="activeOrdersProportion != null and activeOrdersProportion != ''">#{activeOrdersProportion},</if>
+            <if test="activeOrdersFullReduction != null">#{activeOrdersFullReduction},</if>
+            <if test="beyondMeetingOrders != null">#{beyondMeetingOrders},</if>
+            <if test="deliveryActivityOrders != null">#{deliveryActivityOrders},</if>
+            <if test="inputOutputRatio != null">#{inputOutputRatio},</if>
+            <if test="activitiesSubsidyTotal != null">#{activitiesSubsidyTotal},</if>
+            <if test="elmSubsidy != null">#{elmSubsidy},</if>
+            <if test="agentSubsidy != null">#{agentSubsidy},</if>
+            <if test="merchantActivityCosts != null">#{merchantActivityCosts},</if>
+            <if test="excludingMerchantActivityCosts != null">#{excludingMerchantActivityCosts},</if>
+            <if test="marketingEfforts != null">#{marketingEfforts},</if>
+            <if test="excludingMarketingEfforts != null">#{excludingMarketingEfforts},</if>
+            <if test="ordersPeopleNum != null">#{ordersPeopleNum},</if>
+            <if test="recent7daysRepurchasesNum != null">#{recent7daysRepurchasesNum},</if>
+            <if test="recent7daysRepurchasesRate != null">#{recent7daysRepurchasesRate},</if>
+            <if test="recent30daysRepurchaseNum != null">#{recent30daysRepurchaseNum},</if>
+            <if test="recent30daysRepurchaseRate != null">#{recent30daysRepurchaseRate},</if>
+            <if test="newCustomersNum != null">#{newCustomersNum},</if>
+            <if test="regularCustomersNum != null">#{regularCustomersNum},</if>
+            <if test="onShelfGoodsNum != null">#{onShelfGoodsNum},</if>
+            <if test="tradedGoodsNum != null">#{tradedGoodsNum},</if>
+            <if test="insufficientInventoryGoodsNum != null">#{insufficientInventoryGoodsNum},</if>
+            <if test="newProductsMarketNum != null">#{newProductsMarketNum},</if>
+            <if test="activeProductsNum != null">#{activeProductsNum},</if>
+            <if test="negativeEvaluationOrderNum != null">#{negativeEvaluationOrderNum},</if>
+            <if test="complaintOrdersNum != null">#{complaintOrdersNum},</if>
+            <if test="complaintOrderId != null and complaintOrderId != ''">#{complaintOrderId},</if>
+            <if test="overtimeOrdersNum != null">#{overtimeOrdersNum},</if>
+            <if test="mealTimeoutOrderId != null and mealTimeoutOrderId != ''">#{mealTimeoutOrderId},</if>
+            <if test="averageMealTime != null">#{averageMealTime},</if>
+            <if test="remindersNum != null">#{remindersNum},</if>
+            <if test="rejectedOrdersNum != null">#{rejectedOrdersNum},</if>
+            <if test="scannedFoodTreasureNum != null">#{scannedFoodTreasureNum},</if>
+            <if test="cancelNum != null">#{cancelNum},</if>
+            <if test="responsibilityTimeoutNum != null">#{responsibilityTimeoutNum},</if>
+            <if test="chargebacksNum != null">#{chargebacksNum},</if>
+            <if test="reminderNum != null">#{reminderNum},</if>
+            <if test="cancelRate != null">#{cancelRate},</if>
+            <if test="overtimeRate != null">#{overtimeRate},</if>
+            <if test="chargebackRate != null">#{chargebackRate},</if>
+            <if test="reminderRate != null">#{reminderRate},</if>
+            <if test="shopScore != null">#{shopScore},</if>
+            <if test="satisfactionScore != null">#{satisfactionScore},</if>
+            <if test="tasteScore != null">#{tasteScore},</if>
+            <if test="packagingScore != null">#{packagingScore},</if>
+            <if test="recent30daysPositiveRate != null">#{recent30daysPositiveRate},</if>
+            <if test="recent30daysPositiveComments != null">#{recent30daysPositiveComments},</if>
+            <if test="recent30daysEvaluationRate != null">#{recent30daysEvaluationRate},</if>
+            <if test="recent30daysMidNum != null">#{recent30daysMidNum},</if>
+            <if test="recent30daysBadEvaluationRate != null">#{recent30daysBadEvaluationRate},</if>
+            <if test="recent30daysNegativeCommentsNum != null">#{recent30daysNegativeCommentsNum},</if>
+            <if test="recent30daysQualityEvaluationRate != null">#{recent30daysQualityEvaluationRate},</if>
+            <if test="recent30daysHighQualityEvaluationsNum != null">#{recent30daysHighQualityEvaluationsNum},</if>
+            <if test="recent30daysOrderEvaluationRate != null">#{recent30daysOrderEvaluationRate},</if>
+            <if test="recent30daysOrderEvaluationNum != null">#{recent30daysOrderEvaluationNum},</if>
+            <if test="recent30daysManualResponseRate != null">#{recent30daysManualResponseRate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCateringPlatformElmShopData" parameterType="CateringPlatformElmShopData">
+        update catering_platform_elm_shop_data
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="date != null">date = #{date},</if>
+            <if test="shopName != null and shopName != ''">shop_name = #{shopName},</if>
+            <if test="shopId != null">shop_id = #{shopId},</if>
+            <if test="operatingHours != null and operatingHours != ''">operating_hours = #{operatingHours},</if>
+            <if test="peakHours != null and peakHours != ''">peak_hours = #{peakHours},</if>
+            <if test="province != null and province != ''">province = #{province},</if>
+            <if test="cityName != null and cityName != ''">city_name = #{cityName},</if>
+            <if test="validOrder != null">valid_order = #{validOrder},</if>
+            <if test="invalidOrder != null">invalid_order = #{invalidOrder},</if>
+            <if test="income != null">income = #{income},</if>
+            <if test="turnover != null">turnover = #{turnover},</if>
+            <if test="pay != null">pay = #{pay},</if>
+            <if test="customersActuallyAmountTotal != null">customers_actually_amount_total = #{customersActuallyAmountTotal},</if>
+            <if test="actualAveragePrice != null">actual_average_price = #{actualAveragePrice},</if>
+            <if test="averageIncomePrice != null">average_income_price = #{averageIncomePrice},</if>
+            <if test="salesGoods != null">sales_goods = #{salesGoods},</if>
+            <if test="packagingFee != null">packaging_fee = #{packagingFee},</if>
+            <if test="selfDeliveryFee != null">self_delivery_fee = #{selfDeliveryFee},</if>
+            <if test="otherTurnover != null">other_turnover = #{otherTurnover},</if>
+            <if test="drawServant != null">draw_servant = #{drawServant},</if>
+            <if test="activitySubsidy != null">activity_subsidy = #{activitySubsidy},</if>
+            <if test="voucherSubsidy != null">voucher_subsidy = #{voucherSubsidy},</if>
+            <if test="distributionFeeSubsidy != null">distribution_fee_subsidy = #{distributionFeeSubsidy},</if>
+            <if test="smartReductionSubsidy != null">smart_reduction_subsidy = #{smartReductionSubsidy},</if>
+            <if test="smartReductionServiceCharge != null">smart_reduction_service_charge = #{smartReductionServiceCharge},</if>
+            <if test="technicalServiceFee != null">technical_service_fee = #{technicalServiceFee},</if>
+            <if test="otherExpenses != null">other_expenses = #{otherExpenses},</if>
+            <if test="merchantInvalidOrders != null">merchant_invalid_orders = #{merchantInvalidOrders},</if>
+            <if test="exposedPeopleNum != null">exposed_people_num = #{exposedPeopleNum},</if>
+            <if test="exposureTimes != null">exposure_times = #{exposureTimes},</if>
+            <if test="enterShopTimes != null">enter_shop_times = #{enterShopTimes},</if>
+            <if test="enterShopPeopleNum != null">enter_shop_people_num = #{enterShopPeopleNum},</if>
+            <if test="shopConversionRate != null">shop_conversion_rate = #{shopConversionRate},</if>
+            <if test="orderConversionRate != null">order_conversion_rate = #{orderConversionRate},</if>
+            <if test="newOrdersConversionRate != null">new_orders_conversion_rate = #{newOrdersConversionRate},</if>
+            <if test="regularCustomersConversionRate != null">regular_customers_conversion_rate = #{regularCustomersConversionRate},</if>
+            <if test="activitiesNum != null">activities_num = #{activitiesNum},</if>
+            <if test="activeOrdersNum != null">active_orders_num = #{activeOrdersNum},</if>
+            <if test="activeOrdersProportion != null and activeOrdersProportion != ''">active_orders_proportion = #{activeOrdersProportion},</if>
+            <if test="activeOrdersFullReduction != null">active_orders_full_reduction = #{activeOrdersFullReduction},</if>
+            <if test="beyondMeetingOrders != null">beyond_meeting_orders = #{beyondMeetingOrders},</if>
+            <if test="deliveryActivityOrders != null">delivery_activity_orders = #{deliveryActivityOrders},</if>
+            <if test="inputOutputRatio != null">input_output_ratio = #{inputOutputRatio},</if>
+            <if test="activitiesSubsidyTotal != null">activities_subsidy_total = #{activitiesSubsidyTotal},</if>
+            <if test="elmSubsidy != null">elm_subsidy = #{elmSubsidy},</if>
+            <if test="agentSubsidy != null">agent_subsidy = #{agentSubsidy},</if>
+            <if test="merchantActivityCosts != null">merchant_activity_costs = #{merchantActivityCosts},</if>
+            <if test="excludingMerchantActivityCosts != null">excluding_merchant_activity_costs = #{excludingMerchantActivityCosts},</if>
+            <if test="marketingEfforts != null">marketing_efforts = #{marketingEfforts},</if>
+            <if test="excludingMarketingEfforts != null">excluding_marketing_efforts = #{excludingMarketingEfforts},</if>
+            <if test="ordersPeopleNum != null">orders_people_num = #{ordersPeopleNum},</if>
+            <if test="recent7daysRepurchasesNum != null">recent_7days_repurchases_num = #{recent7daysRepurchasesNum},</if>
+            <if test="recent7daysRepurchasesRate != null">recent_7days_repurchases_rate = #{recent7daysRepurchasesRate},</if>
+            <if test="recent30daysRepurchaseNum != null">recent_30days_repurchase_num = #{recent30daysRepurchaseNum},</if>
+            <if test="recent30daysRepurchaseRate != null">recent_30days_repurchase_rate = #{recent30daysRepurchaseRate},</if>
+            <if test="newCustomersNum != null">new_customers_num = #{newCustomersNum},</if>
+            <if test="regularCustomersNum != null">regular_customers_num = #{regularCustomersNum},</if>
+            <if test="onShelfGoodsNum != null">on_shelf_goods_num = #{onShelfGoodsNum},</if>
+            <if test="tradedGoodsNum != null">traded_goods_num = #{tradedGoodsNum},</if>
+            <if test="insufficientInventoryGoodsNum != null">insufficient_inventory_goods_num = #{insufficientInventoryGoodsNum},</if>
+            <if test="newProductsMarketNum != null">new_products_market_num = #{newProductsMarketNum},</if>
+            <if test="activeProductsNum != null">active_products_num = #{activeProductsNum},</if>
+            <if test="negativeEvaluationOrderNum != null">negative_evaluation_order_num = #{negativeEvaluationOrderNum},</if>
+            <if test="complaintOrdersNum != null">complaint_orders_num = #{complaintOrdersNum},</if>
+            <if test="complaintOrderId != null and complaintOrderId != ''">complaint_order_id = #{complaintOrderId},</if>
+            <if test="overtimeOrdersNum != null">overtime_orders_num = #{overtimeOrdersNum},</if>
+            <if test="mealTimeoutOrderId != null and mealTimeoutOrderId != ''">meal_timeout_order_id = #{mealTimeoutOrderId},</if>
+            <if test="averageMealTime != null">average_meal_time = #{averageMealTime},</if>
+            <if test="remindersNum != null">reminders_num = #{remindersNum},</if>
+            <if test="rejectedOrdersNum != null">rejected_orders_num = #{rejectedOrdersNum},</if>
+            <if test="scannedFoodTreasureNum != null">scanned_food_treasure_num = #{scannedFoodTreasureNum},</if>
+            <if test="cancelNum != null">cancel_num = #{cancelNum},</if>
+            <if test="responsibilityTimeoutNum != null">responsibility_timeout_num = #{responsibilityTimeoutNum},</if>
+            <if test="chargebacksNum != null">chargebacks_num = #{chargebacksNum},</if>
+            <if test="reminderNum != null">reminder_num = #{reminderNum},</if>
+            <if test="cancelRate != null">cancel_rate = #{cancelRate},</if>
+            <if test="overtimeRate != null">overtime_rate = #{overtimeRate},</if>
+            <if test="chargebackRate != null">chargeback_rate = #{chargebackRate},</if>
+            <if test="reminderRate != null">reminder_rate = #{reminderRate},</if>
+            <if test="shopScore != null">shop_score = #{shopScore},</if>
+            <if test="satisfactionScore != null">satisfaction_score = #{satisfactionScore},</if>
+            <if test="tasteScore != null">taste_score = #{tasteScore},</if>
+            <if test="packagingScore != null">packaging_score = #{packagingScore},</if>
+            <if test="recent30daysPositiveRate != null">recent_30days_positive_rate = #{recent30daysPositiveRate},</if>
+            <if test="recent30daysPositiveComments != null">recent_30days_positive_comments = #{recent30daysPositiveComments},</if>
+            <if test="recent30daysEvaluationRate != null">recent_30days_evaluation_rate = #{recent30daysEvaluationRate},</if>
+            <if test="recent30daysMidNum != null">recent_30days_mid_num = #{recent30daysMidNum},</if>
+            <if test="recent30daysBadEvaluationRate != null">recent_30days_bad_evaluation_rate = #{recent30daysBadEvaluationRate},</if>
+            <if test="recent30daysNegativeCommentsNum != null">recent_30days_negative_comments_num = #{recent30daysNegativeCommentsNum},</if>
+            <if test="recent30daysQualityEvaluationRate != null">recent_30days_quality_evaluation_rate = #{recent30daysQualityEvaluationRate},</if>
+            <if test="recent30daysHighQualityEvaluationsNum != null">recent_30days_high_quality_evaluations_num = #{recent30daysHighQualityEvaluationsNum},</if>
+            <if test="recent30daysOrderEvaluationRate != null">recent_30days_order_evaluation_rate = #{recent30daysOrderEvaluationRate},</if>
+            <if test="recent30daysOrderEvaluationNum != null">recent_30days_order_evaluation_num = #{recent30daysOrderEvaluationNum},</if>
+            <if test="recent30daysManualResponseRate != null">recent_30days_manual_response_rate = #{recent30daysManualResponseRate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCateringPlatformElmShopDataById" parameterType="Long">
+        delete from catering_platform_elm_shop_data where id = #{id}
+    </delete>
+
+    <delete id="deleteCateringPlatformElmShopDataByIds" parameterType="String">
+        delete from catering_platform_elm_shop_data where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -38,7 +38,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectBitableAppConfigVo"/>
         where id = #{id}
     </select>
-        
+
+    <select id="selectBitableAppConfigByAppId" resultType="com.ruoyi.bitable.domain.BitableAppConfig">
+        <include refid="selectBitableAppConfigVo"/>
+        where appId = #{appId}
+    </select>
+
     <insert id="insertBitableAppConfig" parameterType="BitableAppConfig" useGeneratedKeys="true" keyProperty="id">
         insert into bitable_app_config
         <trim prefix="(" suffix=")" suffixOverrides=",">

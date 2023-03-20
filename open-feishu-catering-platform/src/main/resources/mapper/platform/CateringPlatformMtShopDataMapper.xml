@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.catering.mapper.CateringPlatformMtShopDataMapper">
+    
+    <resultMap type="CateringPlatformMtShopData" id="CateringPlatformMtShopDataResult">
+        <result property="id"    column="id"    />
+        <result property="date"    column="date"    />
+        <result property="shopCity"    column="shop_city"    />
+        <result property="shopName"    column="shop_name"    />
+        <result property="shopId"    column="shop_id"    />
+        <result property="income"    column="income"    />
+        <result property="goodsOriginalPrice"    column="goods_original_price"    />
+        <result property="packagingFee"    column="packaging_fee"    />
+        <result property="customerDeliveryFee"    column="customer_delivery_fee"    />
+        <result property="pay"    column="pay"    />
+        <result property="merchantActivityExpenditure"    column="merchant_activity_expenditure"    />
+        <result property="publicContributions"    column="public_contributions"    />
+        <result property="otherExpenses"    column="other_expenses"    />
+        <result property="turnover"    column="turnover"    />
+        <result property="customerActualPayment"    column="customer_actual_payment"    />
+        <result property="validOrder"    column="valid_order"    />
+        <result property="paidAveragePrice"    column="paid_average_price"    />
+        <result property="activitySubsidy"    column="activity_subsidy"    />
+        <result property="subsidyPlatformActivities"    column="subsidy_platform_activities"    />
+        <result property="platformServiceFee"    column="platform_service_fee"    />
+        <result property="exposedPeopleNum"    column="exposed_people_num"    />
+        <result property="enterShopPeopleNum"    column="enter_shop_people_num"    />
+        <result property="shopConversionRate"    column="shop_conversion_rate"    />
+        <result property="orderConversionRate"    column="order_conversion_rate"    />
+        <result property="exposeNewCustomers"    column="expose_new_customers"    />
+        <result property="enterShopNewCustomers"    column="enter_shop_new_customers"    />
+        <result property="enterShopNewCustomersRate"    column="enter_shop_new_customers_rate"    />
+        <result property="newOrdersConversionRate"    column="new_orders_conversion_rate"    />
+        <result property="exposeRegularCustomers"    column="expose_regular_customers"    />
+        <result property="regularCustomers"    column="regular_customers"    />
+        <result property="regularCustomersConversionRate"    column="regular_customers_conversion_rate"    />
+        <result property="regularOrdersConversionRate"    column="regular_orders_conversion_rate"    />
+        <result property="ordersPeopleNum"    column="orders_people_num"    />
+        <result property="orderNewCustomers"    column="order_new_customers"    />
+        <result property="orderRegularCustomer"    column="order_regular_customer"    />
+        <result property="cancelOrder"    column="cancel_order"    />
+        <result property="cancellationOrders"    column="cancellation_orders"    />
+        <result property="cancellationRate"    column="cancellation_rate"    />
+        <result property="shopScore"    column="shop_score"    />
+        <result property="peakHoursScore"    column="peak_hours_score"    />
+        <result property="highQualityRateScore"    column="high_quality_rate_score"    />
+        <result property="effectiveActivityAbundanceScore"    column="effective_activity_abundance_score"    />
+        <result property="nonAcceptanceScore"    column="non_acceptance_score"    />
+        <result property="negativeFeedbackScore"    column="negative_feedback_score"    />
+        <result property="onlineContactResponseScore"    column="online_contact_response_score"    />
+        <result property="merchantScore"    column="merchant_score"    />
+        <result property="averageDailyPeakRecent30days"    column="average_daily_peak_recent_30days"    />
+        <result property="highQualityCommodityRate"    column="high_quality_commodity_rate"    />
+        <result property="abundanceEffectiveActivities"    column="abundance_effective_activities"    />
+        <result property="recent30daysNonReceivingRate"    column="recent_30days_non_receiving_rate"    />
+        <result property="recent30daysNegativeResponseRate"    column="recent_30days_negative_response_rate"    />
+        <result property="past7daysDailyAverageResponseRate"    column="past_7days_daily_average_response_rate"    />
+        <result property="merchantRate"    column="merchant_rate"    />
+        <result property="menuRichnessScore"    column="menu_richness_score"    />
+        <result property="decorationAbundanceScore"    column="decoration_abundance_score"    />
+        <result property="serviceFunctionRichnessScore"    column="service_function_richness_score"    />
+        <result property="menuRichness"    column="menu_richness"    />
+        <result property="abundanceDecoration"    column="abundance_decoration"    />
+        <result property="abundanceServiceFunctions"    column="abundance_service_functions"    />
+        <result property="deliveryPunctualityRate"    column="delivery_punctuality_rate"    />
+        <result property="basicOperatingHoursScore"    column="basic_operating_hours_score"    />
+        <result property="basicOperatingHours"    column="basic_operating_hours"    />
+        <result property="deliveryPunctualityRateScore"    column="delivery_punctuality_rate_score"    />
+    </resultMap>
+
+    <sql id="selectCateringPlatformMtShopDataVo">
+        select id, date, shop_city, shop_name, shop_id, income, goods_original_price, packaging_fee, customer_delivery_fee, pay, merchant_activity_expenditure, public_contributions, other_expenses, turnover, customer_actual_payment, valid_order, paid_average_price, activity_subsidy, subsidy_platform_activities, platform_service_fee, exposed_people_num, enter_shop_people_num, shop_conversion_rate, order_conversion_rate, expose_new_customers, enter_shop_new_customers, enter_shop_new_customers_rate, new_orders_conversion_rate, expose_regular_customers, regular_customers, regular_customers_conversion_rate, regular_orders_conversion_rate, orders_people_num, order_new_customers, order_regular_customer, cancel_order, cancellation_orders, cancellation_rate, shop_score, peak_hours_score, high_quality_rate_score, effective_activity_abundance_score, non_acceptance_score, negative_feedback_score, online_contact_response_score, merchant_score, average_daily_peak_recent_30days, high_quality_commodity_rate, abundance_effective_activities, recent_30days_non_receiving_rate, recent_30days_negative_response_rate, past_7days_daily_average_response_rate, merchant_rate, menu_richness_score, decoration_abundance_score, service_function_richness_score, menu_richness, abundance_decoration, abundance_service_functions, delivery_punctuality_rate, basic_operating_hours_score, basic_operating_hours, delivery_punctuality_rate_score from catering_platform_mt_shop_data
+    </sql>
+
+    <select id="selectCateringPlatformMtShopDataList" parameterType="CateringPlatformMtShopData" resultMap="CateringPlatformMtShopDataResult">
+        <include refid="selectCateringPlatformMtShopDataVo"/>
+        <where>  
+            <if test="date != null "> and date = #{date}</if>
+            <if test="shopCity != null  and shopCity != ''"> and shop_city = #{shopCity}</if>
+            <if test="shopName != null  and shopName != ''"> and shop_name like concat('%', #{shopName}, '%')</if>
+            <if test="shopId != null  and shopId != ''"> and shop_id = #{shopId}</if>
+            <if test="income != null "> and income = #{income}</if>
+            <if test="goodsOriginalPrice != null "> and goods_original_price = #{goodsOriginalPrice}</if>
+            <if test="packagingFee != null "> and packaging_fee = #{packagingFee}</if>
+            <if test="customerDeliveryFee != null "> and customer_delivery_fee = #{customerDeliveryFee}</if>
+            <if test="pay != null "> and pay = #{pay}</if>
+            <if test="merchantActivityExpenditure != null "> and merchant_activity_expenditure = #{merchantActivityExpenditure}</if>
+            <if test="publicContributions != null "> and public_contributions = #{publicContributions}</if>
+            <if test="otherExpenses != null "> and other_expenses = #{otherExpenses}</if>
+            <if test="turnover != null "> and turnover = #{turnover}</if>
+            <if test="customerActualPayment != null "> and customer_actual_payment = #{customerActualPayment}</if>
+            <if test="validOrder != null "> and valid_order = #{validOrder}</if>
+            <if test="paidAveragePrice != null "> and paid_average_price = #{paidAveragePrice}</if>
+            <if test="activitySubsidy != null "> and activity_subsidy = #{activitySubsidy}</if>
+            <if test="subsidyPlatformActivities != null "> and subsidy_platform_activities = #{subsidyPlatformActivities}</if>
+            <if test="platformServiceFee != null "> and platform_service_fee = #{platformServiceFee}</if>
+            <if test="exposedPeopleNum != null  and exposedPeopleNum != ''"> and exposed_people_num = #{exposedPeopleNum}</if>
+            <if test="enterShopPeopleNum != null "> and enter_shop_people_num = #{enterShopPeopleNum}</if>
+            <if test="shopConversionRate != null "> and shop_conversion_rate = #{shopConversionRate}</if>
+            <if test="orderConversionRate != null "> and order_conversion_rate = #{orderConversionRate}</if>
+            <if test="exposeNewCustomers != null "> and expose_new_customers = #{exposeNewCustomers}</if>
+            <if test="enterShopNewCustomers != null "> and enter_shop_new_customers = #{enterShopNewCustomers}</if>
+            <if test="enterShopNewCustomersRate != null "> and enter_shop_new_customers_rate = #{enterShopNewCustomersRate}</if>
+            <if test="newOrdersConversionRate != null "> and new_orders_conversion_rate = #{newOrdersConversionRate}</if>
+            <if test="exposeRegularCustomers != null "> and expose_regular_customers = #{exposeRegularCustomers}</if>
+            <if test="regularCustomers != null "> and regular_customers = #{regularCustomers}</if>
+            <if test="regularCustomersConversionRate != null "> and regular_customers_conversion_rate = #{regularCustomersConversionRate}</if>
+            <if test="regularOrdersConversionRate != null "> and regular_orders_conversion_rate = #{regularOrdersConversionRate}</if>
+            <if test="ordersPeopleNum != null "> and orders_people_num = #{ordersPeopleNum}</if>
+            <if test="orderNewCustomers != null "> and order_new_customers = #{orderNewCustomers}</if>
+            <if test="orderRegularCustomer != null "> and order_regular_customer = #{orderRegularCustomer}</if>
+            <if test="cancelOrder != null "> and cancel_order = #{cancelOrder}</if>
+            <if test="cancellationOrders != null "> and cancellation_orders = #{cancellationOrders}</if>
+            <if test="cancellationRate != null "> and cancellation_rate = #{cancellationRate}</if>
+            <if test="shopScore != null "> and shop_score = #{shopScore}</if>
+            <if test="peakHoursScore != null "> and peak_hours_score = #{peakHoursScore}</if>
+            <if test="highQualityRateScore != null "> and high_quality_rate_score = #{highQualityRateScore}</if>
+            <if test="effectiveActivityAbundanceScore != null "> and effective_activity_abundance_score = #{effectiveActivityAbundanceScore}</if>
+            <if test="nonAcceptanceScore != null "> and non_acceptance_score = #{nonAcceptanceScore}</if>
+            <if test="negativeFeedbackScore != null "> and negative_feedback_score = #{negativeFeedbackScore}</if>
+            <if test="onlineContactResponseScore != null "> and online_contact_response_score = #{onlineContactResponseScore}</if>
+            <if test="merchantScore != null "> and merchant_score = #{merchantScore}</if>
+            <if test="averageDailyPeakRecent30days != null "> and average_daily_peak_recent_30days = #{averageDailyPeakRecent30days}</if>
+            <if test="highQualityCommodityRate != null  and highQualityCommodityRate != ''"> and high_quality_commodity_rate = #{highQualityCommodityRate}</if>
+            <if test="abundanceEffectiveActivities != null  and abundanceEffectiveActivities != ''"> and abundance_effective_activities = #{abundanceEffectiveActivities}</if>
+            <if test="recent30daysNonReceivingRate != null  and recent30daysNonReceivingRate != ''"> and recent_30days_non_receiving_rate = #{recent30daysNonReceivingRate}</if>
+            <if test="recent30daysNegativeResponseRate != null  and recent30daysNegativeResponseRate != ''"> and recent_30days_negative_response_rate = #{recent30daysNegativeResponseRate}</if>
+            <if test="past7daysDailyAverageResponseRate != null  and past7daysDailyAverageResponseRate != ''"> and past_7days_daily_average_response_rate = #{past7daysDailyAverageResponseRate}</if>
+            <if test="merchantRate != null "> and merchant_rate = #{merchantRate}</if>
+            <if test="menuRichnessScore != null "> and menu_richness_score = #{menuRichnessScore}</if>
+            <if test="decorationAbundanceScore != null "> and decoration_abundance_score = #{decorationAbundanceScore}</if>
+            <if test="serviceFunctionRichnessScore != null "> and service_function_richness_score = #{serviceFunctionRichnessScore}</if>
+            <if test="menuRichness != null  and menuRichness != ''"> and menu_richness = #{menuRichness}</if>
+            <if test="abundanceDecoration != null  and abundanceDecoration != ''"> and abundance_decoration = #{abundanceDecoration}</if>
+            <if test="abundanceServiceFunctions != null  and abundanceServiceFunctions != ''"> and abundance_service_functions = #{abundanceServiceFunctions}</if>
+            <if test="deliveryPunctualityRate != null  and deliveryPunctualityRate != ''"> and delivery_punctuality_rate = #{deliveryPunctualityRate}</if>
+            <if test="basicOperatingHoursScore != null "> and basic_operating_hours_score = #{basicOperatingHoursScore}</if>
+            <if test="basicOperatingHours != null "> and basic_operating_hours = #{basicOperatingHours}</if>
+            <if test="deliveryPunctualityRateScore != null "> and delivery_punctuality_rate_score = #{deliveryPunctualityRateScore}</if>
+        </where>
+    </select>
+    
+    <select id="selectCateringPlatformMtShopDataById" parameterType="Long" resultMap="CateringPlatformMtShopDataResult">
+        <include refid="selectCateringPlatformMtShopDataVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="selectMtShopDataByShopIDAndDate" parameterType="CateringPlatformMtShopData" resultMap="CateringPlatformMtShopDataResult">
+        <include refid="selectCateringPlatformMtShopDataVo"/>
+        <where>
+         date = #{date} and shop_id = #{shopId}
+        </where>
+    </select>
+
+    <insert id="insertCateringPlatformMtShopData" parameterType="CateringPlatformMtShopData" useGeneratedKeys="true" keyProperty="id">
+        insert into catering_platform_mt_shop_data
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="date != null">date,</if>
+            <if test="shopCity != null and shopCity != ''">shop_city,</if>
+            <if test="shopName != null and shopName != ''">shop_name,</if>
+            <if test="shopId != null and shopId != ''">shop_id,</if>
+            <if test="income != null">income,</if>
+            <if test="goodsOriginalPrice != null">goods_original_price,</if>
+            <if test="packagingFee != null">packaging_fee,</if>
+            <if test="customerDeliveryFee != null">customer_delivery_fee,</if>
+            <if test="pay != null">pay,</if>
+            <if test="merchantActivityExpenditure != null">merchant_activity_expenditure,</if>
+            <if test="publicContributions != null">public_contributions,</if>
+            <if test="otherExpenses != null">other_expenses,</if>
+            <if test="turnover != null">turnover,</if>
+            <if test="customerActualPayment != null">customer_actual_payment,</if>
+            <if test="validOrder != null">valid_order,</if>
+            <if test="paidAveragePrice != null">paid_average_price,</if>
+            <if test="activitySubsidy != null">activity_subsidy,</if>
+            <if test="subsidyPlatformActivities != null">subsidy_platform_activities,</if>
+            <if test="platformServiceFee != null">platform_service_fee,</if>
+            <if test="exposedPeopleNum != null and exposedPeopleNum != ''">exposed_people_num,</if>
+            <if test="enterShopPeopleNum != null">enter_shop_people_num,</if>
+            <if test="shopConversionRate != null">shop_conversion_rate,</if>
+            <if test="orderConversionRate != null">order_conversion_rate,</if>
+            <if test="exposeNewCustomers != null">expose_new_customers,</if>
+            <if test="enterShopNewCustomers != null">enter_shop_new_customers,</if>
+            <if test="enterShopNewCustomersRate != null">enter_shop_new_customers_rate,</if>
+            <if test="newOrdersConversionRate != null">new_orders_conversion_rate,</if>
+            <if test="exposeRegularCustomers != null">expose_regular_customers,</if>
+            <if test="regularCustomers != null">regular_customers,</if>
+            <if test="regularCustomersConversionRate != null">regular_customers_conversion_rate,</if>
+            <if test="regularOrdersConversionRate != null">regular_orders_conversion_rate,</if>
+            <if test="ordersPeopleNum != null">orders_people_num,</if>
+            <if test="orderNewCustomers != null">order_new_customers,</if>
+            <if test="orderRegularCustomer != null">order_regular_customer,</if>
+            <if test="cancelOrder != null">cancel_order,</if>
+            <if test="cancellationOrders != null">cancellation_orders,</if>
+            <if test="cancellationRate != null">cancellation_rate,</if>
+            <if test="shopScore != null">shop_score,</if>
+            <if test="peakHoursScore != null">peak_hours_score,</if>
+            <if test="highQualityRateScore != null">high_quality_rate_score,</if>
+            <if test="effectiveActivityAbundanceScore != null">effective_activity_abundance_score,</if>
+            <if test="nonAcceptanceScore != null">non_acceptance_score,</if>
+            <if test="negativeFeedbackScore != null">negative_feedback_score,</if>
+            <if test="onlineContactResponseScore != null">online_contact_response_score,</if>
+            <if test="merchantScore != null">merchant_score,</if>
+            <if test="averageDailyPeakRecent30days != null">average_daily_peak_recent_30days,</if>
+            <if test="highQualityCommodityRate != null and highQualityCommodityRate != ''">high_quality_commodity_rate,</if>
+            <if test="abundanceEffectiveActivities != null and abundanceEffectiveActivities != ''">abundance_effective_activities,</if>
+            <if test="recent30daysNonReceivingRate != null and recent30daysNonReceivingRate != ''">recent_30days_non_receiving_rate,</if>
+            <if test="recent30daysNegativeResponseRate != null and recent30daysNegativeResponseRate != ''">recent_30days_negative_response_rate,</if>
+            <if test="past7daysDailyAverageResponseRate != null and past7daysDailyAverageResponseRate != ''">past_7days_daily_average_response_rate,</if>
+            <if test="merchantRate != null">merchant_rate,</if>
+            <if test="menuRichnessScore != null">menu_richness_score,</if>
+            <if test="decorationAbundanceScore != null">decoration_abundance_score,</if>
+            <if test="serviceFunctionRichnessScore != null">service_function_richness_score,</if>
+            <if test="menuRichness != null and menuRichness != ''">menu_richness,</if>
+            <if test="abundanceDecoration != null and abundanceDecoration != ''">abundance_decoration,</if>
+            <if test="abundanceServiceFunctions != null and abundanceServiceFunctions != ''">abundance_service_functions,</if>
+            <if test="deliveryPunctualityRate != null and deliveryPunctualityRate != ''">delivery_punctuality_rate,</if>
+            <if test="basicOperatingHoursScore != null">basic_operating_hours_score,</if>
+            <if test="basicOperatingHours != null">basic_operating_hours,</if>
+            <if test="deliveryPunctualityRateScore != null">delivery_punctuality_rate_score,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="date != null">#{date},</if>
+            <if test="shopCity != null and shopCity != ''">#{shopCity},</if>
+            <if test="shopName != null and shopName != ''">#{shopName},</if>
+            <if test="shopId != null and shopId != ''">#{shopId},</if>
+            <if test="income != null">#{income},</if>
+            <if test="goodsOriginalPrice != null">#{goodsOriginalPrice},</if>
+            <if test="packagingFee != null">#{packagingFee},</if>
+            <if test="customerDeliveryFee != null">#{customerDeliveryFee},</if>
+            <if test="pay != null">#{pay},</if>
+            <if test="merchantActivityExpenditure != null">#{merchantActivityExpenditure},</if>
+            <if test="publicContributions != null">#{publicContributions},</if>
+            <if test="otherExpenses != null">#{otherExpenses},</if>
+            <if test="turnover != null">#{turnover},</if>
+            <if test="customerActualPayment != null">#{customerActualPayment},</if>
+            <if test="validOrder != null">#{validOrder},</if>
+            <if test="paidAveragePrice != null">#{paidAveragePrice},</if>
+            <if test="activitySubsidy != null">#{activitySubsidy},</if>
+            <if test="subsidyPlatformActivities != null">#{subsidyPlatformActivities},</if>
+            <if test="platformServiceFee != null">#{platformServiceFee},</if>
+            <if test="exposedPeopleNum != null and exposedPeopleNum != ''">#{exposedPeopleNum},</if>
+            <if test="enterShopPeopleNum != null">#{enterShopPeopleNum},</if>
+            <if test="shopConversionRate != null">#{shopConversionRate},</if>
+            <if test="orderConversionRate != null">#{orderConversionRate},</if>
+            <if test="exposeNewCustomers != null">#{exposeNewCustomers},</if>
+            <if test="enterShopNewCustomers != null">#{enterShopNewCustomers},</if>
+            <if test="enterShopNewCustomersRate != null">#{enterShopNewCustomersRate},</if>
+            <if test="newOrdersConversionRate != null">#{newOrdersConversionRate},</if>
+            <if test="exposeRegularCustomers != null">#{exposeRegularCustomers},</if>
+            <if test="regularCustomers != null">#{regularCustomers},</if>
+            <if test="regularCustomersConversionRate != null">#{regularCustomersConversionRate},</if>
+            <if test="regularOrdersConversionRate != null">#{regularOrdersConversionRate},</if>
+            <if test="ordersPeopleNum != null">#{ordersPeopleNum},</if>
+            <if test="orderNewCustomers != null">#{orderNewCustomers},</if>
+            <if test="orderRegularCustomer != null">#{orderRegularCustomer},</if>
+            <if test="cancelOrder != null">#{cancelOrder},</if>
+            <if test="cancellationOrders != null">#{cancellationOrders},</if>
+            <if test="cancellationRate != null">#{cancellationRate},</if>
+            <if test="shopScore != null">#{shopScore},</if>
+            <if test="peakHoursScore != null">#{peakHoursScore},</if>
+            <if test="highQualityRateScore != null">#{highQualityRateScore},</if>
+            <if test="effectiveActivityAbundanceScore != null">#{effectiveActivityAbundanceScore},</if>
+            <if test="nonAcceptanceScore != null">#{nonAcceptanceScore},</if>
+            <if test="negativeFeedbackScore != null">#{negativeFeedbackScore},</if>
+            <if test="onlineContactResponseScore != null">#{onlineContactResponseScore},</if>
+            <if test="merchantScore != null">#{merchantScore},</if>
+            <if test="averageDailyPeakRecent30days != null">#{averageDailyPeakRecent30days},</if>
+            <if test="highQualityCommodityRate != null and highQualityCommodityRate != ''">#{highQualityCommodityRate},</if>
+            <if test="abundanceEffectiveActivities != null and abundanceEffectiveActivities != ''">#{abundanceEffectiveActivities},</if>
+            <if test="recent30daysNonReceivingRate != null and recent30daysNonReceivingRate != ''">#{recent30daysNonReceivingRate},</if>
+            <if test="recent30daysNegativeResponseRate != null and recent30daysNegativeResponseRate != ''">#{recent30daysNegativeResponseRate},</if>
+            <if test="past7daysDailyAverageResponseRate != null and past7daysDailyAverageResponseRate != ''">#{past7daysDailyAverageResponseRate},</if>
+            <if test="merchantRate != null">#{merchantRate},</if>
+            <if test="menuRichnessScore != null">#{menuRichnessScore},</if>
+            <if test="decorationAbundanceScore != null">#{decorationAbundanceScore},</if>
+            <if test="serviceFunctionRichnessScore != null">#{serviceFunctionRichnessScore},</if>
+            <if test="menuRichness != null and menuRichness != ''">#{menuRichness},</if>
+            <if test="abundanceDecoration != null and abundanceDecoration != ''">#{abundanceDecoration},</if>
+            <if test="abundanceServiceFunctions != null and abundanceServiceFunctions != ''">#{abundanceServiceFunctions},</if>
+            <if test="deliveryPunctualityRate != null and deliveryPunctualityRate != ''">#{deliveryPunctualityRate},</if>
+            <if test="basicOperatingHoursScore != null">#{basicOperatingHoursScore},</if>
+            <if test="basicOperatingHours != null">#{basicOperatingHours},</if>
+            <if test="deliveryPunctualityRateScore != null">#{deliveryPunctualityRateScore},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCateringPlatformMtShopData" parameterType="CateringPlatformMtShopData">
+        update catering_platform_mt_shop_data
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="date != null">date = #{date},</if>
+            <if test="shopCity != null and shopCity != ''">shop_city = #{shopCity},</if>
+            <if test="shopName != null and shopName != ''">shop_name = #{shopName},</if>
+            <if test="shopId != null and shopId != ''">shop_id = #{shopId},</if>
+            <if test="income != null">income = #{income},</if>
+            <if test="goodsOriginalPrice != null">goods_original_price = #{goodsOriginalPrice},</if>
+            <if test="packagingFee != null">packaging_fee = #{packagingFee},</if>
+            <if test="customerDeliveryFee != null">customer_delivery_fee = #{customerDeliveryFee},</if>
+            <if test="pay != null">pay = #{pay},</if>
+            <if test="merchantActivityExpenditure != null">merchant_activity_expenditure = #{merchantActivityExpenditure},</if>
+            <if test="publicContributions != null">public_contributions = #{publicContributions},</if>
+            <if test="otherExpenses != null">other_expenses = #{otherExpenses},</if>
+            <if test="turnover != null">turnover = #{turnover},</if>
+            <if test="customerActualPayment != null">customer_actual_payment = #{customerActualPayment},</if>
+            <if test="validOrder != null">valid_order = #{validOrder},</if>
+            <if test="paidAveragePrice != null">paid_average_price = #{paidAveragePrice},</if>
+            <if test="activitySubsidy != null">activity_subsidy = #{activitySubsidy},</if>
+            <if test="subsidyPlatformActivities != null">subsidy_platform_activities = #{subsidyPlatformActivities},</if>
+            <if test="platformServiceFee != null">platform_service_fee = #{platformServiceFee},</if>
+            <if test="exposedPeopleNum != null and exposedPeopleNum != ''">exposed_people_num = #{exposedPeopleNum},</if>
+            <if test="enterShopPeopleNum != null">enter_shop_people_num = #{enterShopPeopleNum},</if>
+            <if test="shopConversionRate != null">shop_conversion_rate = #{shopConversionRate},</if>
+            <if test="orderConversionRate != null">order_conversion_rate = #{orderConversionRate},</if>
+            <if test="exposeNewCustomers != null">expose_new_customers = #{exposeNewCustomers},</if>
+            <if test="enterShopNewCustomers != null">enter_shop_new_customers = #{enterShopNewCustomers},</if>
+            <if test="enterShopNewCustomersRate != null">enter_shop_new_customers_rate = #{enterShopNewCustomersRate},</if>
+            <if test="newOrdersConversionRate != null">new_orders_conversion_rate = #{newOrdersConversionRate},</if>
+            <if test="exposeRegularCustomers != null">expose_regular_customers = #{exposeRegularCustomers},</if>
+            <if test="regularCustomers != null">regular_customers = #{regularCustomers},</if>
+            <if test="regularCustomersConversionRate != null">regular_customers_conversion_rate = #{regularCustomersConversionRate},</if>
+            <if test="regularOrdersConversionRate != null">regular_orders_conversion_rate = #{regularOrdersConversionRate},</if>
+            <if test="ordersPeopleNum != null">orders_people_num = #{ordersPeopleNum},</if>
+            <if test="orderNewCustomers != null">order_new_customers = #{orderNewCustomers},</if>
+            <if test="orderRegularCustomer != null">order_regular_customer = #{orderRegularCustomer},</if>
+            <if test="cancelOrder != null">cancel_order = #{cancelOrder},</if>
+            <if test="cancellationOrders != null">cancellation_orders = #{cancellationOrders},</if>
+            <if test="cancellationRate != null">cancellation_rate = #{cancellationRate},</if>
+            <if test="shopScore != null">shop_score = #{shopScore},</if>
+            <if test="peakHoursScore != null">peak_hours_score = #{peakHoursScore},</if>
+            <if test="highQualityRateScore != null">high_quality_rate_score = #{highQualityRateScore},</if>
+            <if test="effectiveActivityAbundanceScore != null">effective_activity_abundance_score = #{effectiveActivityAbundanceScore},</if>
+            <if test="nonAcceptanceScore != null">non_acceptance_score = #{nonAcceptanceScore},</if>
+            <if test="negativeFeedbackScore != null">negative_feedback_score = #{negativeFeedbackScore},</if>
+            <if test="onlineContactResponseScore != null">online_contact_response_score = #{onlineContactResponseScore},</if>
+            <if test="merchantScore != null">merchant_score = #{merchantScore},</if>
+            <if test="averageDailyPeakRecent30days != null">average_daily_peak_recent_30days = #{averageDailyPeakRecent30days},</if>
+            <if test="highQualityCommodityRate != null and highQualityCommodityRate != ''">high_quality_commodity_rate = #{highQualityCommodityRate},</if>
+            <if test="abundanceEffectiveActivities != null and abundanceEffectiveActivities != ''">abundance_effective_activities = #{abundanceEffectiveActivities},</if>
+            <if test="recent30daysNonReceivingRate != null and recent30daysNonReceivingRate != ''">recent_30days_non_receiving_rate = #{recent30daysNonReceivingRate},</if>
+            <if test="recent30daysNegativeResponseRate != null and recent30daysNegativeResponseRate != ''">recent_30days_negative_response_rate = #{recent30daysNegativeResponseRate},</if>
+            <if test="past7daysDailyAverageResponseRate != null and past7daysDailyAverageResponseRate != ''">past_7days_daily_average_response_rate = #{past7daysDailyAverageResponseRate},</if>
+            <if test="merchantRate != null">merchant_rate = #{merchantRate},</if>
+            <if test="menuRichnessScore != null">menu_richness_score = #{menuRichnessScore},</if>
+            <if test="decorationAbundanceScore != null">decoration_abundance_score = #{decorationAbundanceScore},</if>
+            <if test="serviceFunctionRichnessScore != null">service_function_richness_score = #{serviceFunctionRichnessScore},</if>
+            <if test="menuRichness != null and menuRichness != ''">menu_richness = #{menuRichness},</if>
+            <if test="abundanceDecoration != null and abundanceDecoration != ''">abundance_decoration = #{abundanceDecoration},</if>
+            <if test="abundanceServiceFunctions != null and abundanceServiceFunctions != ''">abundance_service_functions = #{abundanceServiceFunctions},</if>
+            <if test="deliveryPunctualityRate != null and deliveryPunctualityRate != ''">delivery_punctuality_rate = #{deliveryPunctualityRate},</if>
+            <if test="basicOperatingHoursScore != null">basic_operating_hours_score = #{basicOperatingHoursScore},</if>
+            <if test="basicOperatingHours != null">basic_operating_hours = #{basicOperatingHours},</if>
+            <if test="deliveryPunctualityRateScore != null">delivery_punctuality_rate_score = #{deliveryPunctualityRateScore},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCateringPlatformMtShopDataById" parameterType="Long">
+        delete from catering_platform_mt_shop_data where id = #{id}
+    </delete>
+
+    <delete id="deleteCateringPlatformMtShopDataByIds" parameterType="String">
+        delete from catering_platform_mt_shop_data where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

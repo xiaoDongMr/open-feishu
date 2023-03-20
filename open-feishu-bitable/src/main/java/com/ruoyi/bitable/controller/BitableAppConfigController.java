@@ -66,6 +66,7 @@ public class BitableAppConfigController extends BaseController
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") String id)
     {
+
         return AjaxResult.success(bitableAppConfigService.selectBitableAppConfigById(id));
     }
 

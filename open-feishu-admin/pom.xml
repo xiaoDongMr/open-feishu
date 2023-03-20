@@ -67,6 +67,12 @@
             <artifactId>open-feishu-bitable</artifactId>
         </dependency>
 
+        <!-- 餐饮平台模块-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>open-feishu-catering-platform</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

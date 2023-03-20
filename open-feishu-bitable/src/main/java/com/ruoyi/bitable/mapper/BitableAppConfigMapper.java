@@ -19,6 +19,8 @@ public interface BitableAppConfigMapper
      */
     public BitableAppConfig selectBitableAppConfigById(String id);
 
+    public BitableAppConfig selectBitableAppConfigByAppId(String appId);
+
     /**
      * 查询多维格应用配置列表
      * 

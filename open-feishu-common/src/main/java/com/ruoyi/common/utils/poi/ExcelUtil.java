@@ -427,7 +427,15 @@ public class ExcelUtil<T>
                     {
                         if (val instanceof String)
                         {
-                            val = DateUtils.parseDate(val);
+                            String dateFormat = field.getAnnotation(Excel.class).dateFormat();
+                            if (StringUtils.isNotEmpty(dateFormat))
+                            {
+                                val = DateUtils.parseDate(String.valueOf(val), dateFormat);
+                            }
+                            else
+                            {
+                                val = DateUtils.parseDate(val);
+                            }
                         }
                         else if (val instanceof Double)
                         {

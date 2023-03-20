@@ -82,10 +82,14 @@
       <el-table-column label="应用配置id" align="center" prop="id" />
       <el-table-column label="飞书appID" align="center" prop="appId" />
       <el-table-column label="飞书secret" align="center" prop="appSecret" />
-      <el-table-column label="应用类型0:ISV 1:企业自建应用" align="center" prop="appType" />
-      <el-table-column label="URL中app_token" align="center" prop="appToken" />
-      <el-table-column label="URL中table_id" align="center" prop="tableId" />
-      <el-table-column label="URL中view_id" align="center" prop="viewId" />
+      <el-table-column label="应用类型" align="center" prop="appType">
+        <template slot-scope="scope">
+          <dict-tag :options="dict.type.bitable_app_type" :value="scope.row.appType"/>
+        </template>
+      </el-table-column>
+      <el-table-column label="app_token" align="center" prop="appToken" />
+      <el-table-column label="table_id" align="center" prop="tableId" />
+      <el-table-column label="view_id" align="center" prop="viewId" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -153,6 +157,13 @@
             </template>
           </el-input>
         </el-form-item>
+        <el-form-item label="应用类型" prop="appType">
+          <el-radio-group v-model="form.appType">
+            <el-radio v-for="dict in dict.type.bitable_app_type" :key="dict.value" :label="parseInt(dict.value)">
+              {{dict.label}}
+            </el-radio>
+          </el-radio-group>
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="primary" @click="submitForm">确 定</el-button>
@@ -184,6 +195,7 @@ import { listConfig, getConfig, delConfig, addConfig, updateConfig } from "@/api
 
 export default {
   name: "Config",
+  dicts: ['bitable_app_type'],
   data() {
     return {
       // 遮罩层
@@ -222,7 +234,9 @@ export default {
         viewId: null,
       },
       // 表单参数
-      form: {},
+      form: {
+        appType: 1
+      },
       // 表单校验
       rules: {
         appId: [
@@ -232,7 +246,7 @@ export default {
           { required: true, message: "飞书secret不能为空", trigger: "blur" }
         ],
         appType: [
-          { required: true, message: "应用类型0:ISV 1:企业自建应用不能为空", trigger: "change" }
+          { required: true, message: "应用类型不能为空", trigger: "change" }
         ],
         appToken: [
           { required: true, message: "URL中app_token不能为空", trigger: "blur" }
@@ -255,7 +269,14 @@ export default {
         updateTime: [
           { required: true, message: "更新时间不能为空", trigger: "blur" }
         ]
-      }
+      },
+      appTypeOptions: [{
+        "label": "ISV",
+        "value": 0
+      }, {
+        "label": "企业自建应用",
+        "value": 1
+      }]
     };
   },
   created() {

@@ -32,6 +32,12 @@ public class BitableAppConfigServiceImpl implements IBitableAppConfigService
         return bitableAppConfigMapper.selectBitableAppConfigById(id);
     }
 
+    @Override
+    public BitableAppConfig selectBitableAppConfigByAppId(String appId) {
+        return bitableAppConfigMapper.selectBitableAppConfigByAppId(appId);
+    }
+
+
     /**
      * 查询多维格应用配置列表
      * 
